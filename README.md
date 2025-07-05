@@ -1,7 +1,8 @@
-# Scream C2 Framework - README
+# Scream C2 Framework
 
 ## Overview
-Scream is a lightweight Command and Control (C2) framework with integrated stress testing capabilities. This framework provides a web-based interface for managing a botnet and launching various types of network stress tests.
+**Scream** is a lightweight, web-based Command and Control (C2) framework with built-in stress testing capabilities. It allows operators to manage bots, monitor activity, and perform a variety of network stress test methods through a secure, intuitive interface.
+
 
 <table>
   <tr>
