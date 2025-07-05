@@ -13,12 +13,52 @@
     <td><img src="https://github.com/user-attachments/assets/948fb62d-5861-4963-8c15-ee110c31e21d" width="100%"/></td>
     <td><img src="https://github.com/user-attachments/assets/736a91e2-4c10-439e-9bf7-128ec9ee7841" width="100%"/></td>
   </tr>
+</table>
+
+## 🔁 TLS Proxy Module
+
+The TLS Proxy module enables encrypted traffic forwarding between bots and the core C2 server. This acts as a secure intermediary, offering stealth, traffic redirection, and flexible network deployment strategies.
+
+---
+<table>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/ecfd42c3-d606-4058-b945-3dd82b72ee77" width="100%"/></td>
   </tr>
 </table>
 
+### 🌐 Purpose
+The proxy listens for incoming TLS connections from bots and securely forwards traffic to the core C2 server. This provides:
+- **Obfuscation** of real C2 infrastructure
+- **Traffic rerouting** through dedicated relay nodes
+- **Flexible deployment** across cloud or on-prem infrastructure
 
+---
+
+### 🔧 Configuration (`proxy.go`)
+| Constant         | Description                        | Default Value           |
+|------------------|------------------------------------|-------------------------|
+| `PROXY_LISTEN`   | Interface and port to listen on     | `0.0.0.0:7003`          |
+| `SERVER_ADDR`    | Target C2 server address/port       | `192.168.1.50:7002`     |
+| `CONNECT_TIMEOUT`| Timeout when connecting to server   | `10s`                   |
+| `IO_TIMEOUT`     | I/O read/write timeout              | `30s`                   |
+| `CERT_FILE`      | TLS certificate file                | `server.crt`            |
+| `KEY_FILE`       | TLS private key file                | `server.key`            |
+
+---
+
+### 🛠 How It Works
+1. Proxy starts and listens for TLS connections on the configured IP/port.
+2. Once a bot connects, the proxy attempts a secure connection to the backend C2 server.
+3. After both ends are connected, the proxy begins full-duplex communication using `io.Copy()`.
+
+---
+
+### ✅ Usage
+Build and run:
+```bash
+go build -o proxy proxy.go
+./proxy
+```
 
 ## Features
 
