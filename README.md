@@ -13,7 +13,6 @@ Scream is a lightweight Command and Control (C2) framework with integrated stres
     <td><img src="https://github.com/user-attachments/assets/42758c97-a105-4798-a82a-a3229643f98e" width="100%"/></td>
   </tr>
 </table>
-![image](https://github.com/user-attachments/assets/42758c97-a105-4798-a82a-a3229643f98e)
 
 ## Features
 
