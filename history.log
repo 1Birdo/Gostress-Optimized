@@ -1,0 +1,102 @@
+[
+  {
+    "method": "!udpflood",
+    "target": "1.1.1.1",
+    "port": "11",
+    "duration": "3s",
+    "start_time": "2025-07-05T18:13:58.969119468+01:00",
+    "end_time": "2025-07-05T18:14:02.996660311+01:00",
+    "bot_count": 0,
+    "successful": true
+  },
+  {
+    "method": "!udpsmart",
+    "target": "0.0.0.0",
+    "port": "11",
+    "duration": "11s",
+    "start_time": "2025-07-05T18:26:57.891205944+01:00",
+    "end_time": "2025-07-05T18:27:08.892279778+01:00",
+    "bot_count": 0,
+    "successful": true
+  },
+  {
+    "method": "!udpsmart",
+    "target": "1.1.1.1",
+    "port": "11",
+    "duration": "11s",
+    "start_time": "2025-07-05T20:08:54.874921998+01:00",
+    "end_time": "2025-07-05T20:09:05.883910389+01:00",
+    "bot_count": 0,
+    "successful": true
+  },
+  {
+    "method": "!tcpflood",
+    "target": "1.1.1.1",
+    "port": "11",
+    "duration": "11s",
+    "start_time": "2025-07-05T20:53:31.618061055+01:00",
+    "end_time": "2025-07-05T20:53:44.876249904+01:00",
+    "bot_count": 0,
+    "successful": true
+  },
+  {
+    "method": "!greflood",
+    "target": "1.1.1.1",
+    "port": "11",
+    "duration": "11s",
+    "start_time": "2025-07-05T20:54:58.865648552+01:00",
+    "end_time": "2025-07-05T20:55:01.115357612+01:00",
+    "bot_count": 0,
+    "successful": false
+  },
+  {
+    "method": "",
+    "target": "",
+    "port": "",
+    "duration": "0s",
+    "start_time": "0001-01-01T00:00:00Z",
+    "end_time": "2025-07-05T20:55:09.871767373+01:00",
+    "bot_count": 0,
+    "successful": true
+  },
+  {
+    "method": "!tcpflood",
+    "target": "1.1.1.1",
+    "port": "11",
+    "duration": "11s",
+    "start_time": "2025-07-05T20:55:12.815652213+01:00",
+    "end_time": "2025-07-05T20:55:13.602250614+01:00",
+    "bot_count": 0,
+    "successful": false
+  },
+  {
+    "method": "!ackflood",
+    "target": "1.1.1.1",
+    "port": "11",
+    "duration": "11s",
+    "start_time": "2025-07-05T20:55:23.321692887+01:00",
+    "end_time": "2025-07-05T20:55:25.175151444+01:00",
+    "bot_count": 0,
+    "successful": false
+  },
+  {
+    "method": "",
+    "target": "",
+    "port": "",
+    "duration": "0s",
+    "start_time": "0001-01-01T00:00:00Z",
+    "end_time": "2025-07-05T20:55:26.172046549+01:00",
+    "bot_count": 0,
+    "successful": true
+  },
+  {
+    "method": "",
+    "target": "",
+    "port": "",
+    "duration": "0s",
+    "start_time": "0001-01-01T00:00:00Z",
+    "end_time": "2025-07-05T20:55:34.322133374+01:00",
+    "bot_count": 0,
+    "successful": true
+  }
+]
