@@ -1,6 +1,6 @@
 
 ## Overview
-**Scream** is a lightweight, web-based Command and Control (C2) framework with built-in stress testing capabilities. It allows operators to manage bots, monitor activity, and perform a variety of network stress test methods through a secure, intuitive interface.
+*This is a lightweight, web-based Command and Control (C2) framework with built-in stress testing capabilities. It allows operators to manage bots, monitor activity, and perform a variety of network stress test methods through a secure, intuitive interface.
 
 <table>
   <tr>
