@@ -20,7 +20,8 @@
 Hopefully to have P2P + load-balancing capabilites Implemented soon
 
 ---
-    Just a fake page to display for the proxy you can server a php status page or something if needed, just a index.hmtl at the moment
+    Just a fake page to display for the proxy you can server a php status page or something if needed,
+    just a index.hmtl at the moment
 <table>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/ecfd42c3-d606-4058-b945-3dd82b72ee77" width="100%"/></td>
