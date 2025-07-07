@@ -15,7 +15,7 @@
 
 ## 🔁 TLS Proxy Module
 
-The TLS Proxy module enables encrypted traffic forwarding between Clients and the C2 server. This acts as a secure Third-party, offering stealth, traffic redirection, and flexible network deployment strategies.
+*The TLS Proxy module enables encrypted traffic forwarding between Clients and the C2 server. This acts as a secure Third-party, offering stealth, traffic redirection, and flexible network deployment strategies.*
 
 Hopefully to have P2P + load-balancing capabilites Implemented soon
 
@@ -47,10 +47,10 @@ The proxy listens for incoming TLS connections from Client and securely forwards
 ---
 
 ### 🛠 How It Works
-1. Proxy starts and listens for TLS connections on the configured IP/port.
+*1. Proxy starts and listens for TLS connections on the configured IP/port.
 2. Once a Client connects, the proxy attempts a secure connection to the backend C2 server.
 3. After both ends are connected, the proxy begins full-duplex communication using `io.Copy()`.
-4. This allows for secure communication and a hidden entry point towards the C2 server
+4. This allows for secure communication and a hidden entry point towards the C2 server*
 ---
 
 ### ✅ Usage
