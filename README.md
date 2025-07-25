@@ -1,6 +1,6 @@
 
 ## Overview
-*This is a lightweight, web-based Command and Control C2 with stress testing capabilities using external Devices or Servers. It allows operators to manage Clients, monitor activity, and perform a variety of network stress test methods through a secure interface.*
+*This is a lightweight version of a web-based Command and Control C2 with stress testing capabilities using external Devices or Servers. It allows operators to manage Clients, monitor activity, and perform a variety of network stress test methods through a secure interface.*
 
 <table>
   <tr>
